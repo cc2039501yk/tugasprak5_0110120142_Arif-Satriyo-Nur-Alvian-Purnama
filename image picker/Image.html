@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>PilihHewan</title>
+    <style>
+      img {
+        width: 50%;
+        border: 2px solid black;
+      }
+
+    </style>
+    <script>
+        function pilih()
+        {
+          let list_hewan = document.getElementById("hewan");
+          let index = list_hewan.selectedIndex;
+          console.log(" hewan index ke  " + index + " adalah " + list_hewan[index].value);
+
+          let picture= document.getElementById("gambar");
+          picture.src="gambar/"+list_hewan[index].value+".jpg";
+        }
+        
+    </script>
+</head>
+<body>
+  <br>
+    <form id="form">
+        <label for="nama_hewan">Nama Hewan:</label>
+        <select id="hewan" onchange="pilih()">
+          <option value="hewan">Pilih Hewan</option>
+          <option value="kucing">Kucing</option>
+          <option value="kadal">Kadal</option>
+          <option value="kurakura">Kura Kura</option>
+          <option value="ikan">Ikan</option>
+          <option value="burung">Burung</option>
+        </select>
+      </form>
+      <br>
+      <img src="gambar/hewan.jpg" alt="hewan" id="gambar"/>
+</body>
+</html>

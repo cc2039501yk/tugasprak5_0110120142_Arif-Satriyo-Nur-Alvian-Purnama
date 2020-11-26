@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toko Madu Sehat Selalu</title>
+  <style type="text/css">
+    body{
+    background-attachment: fixed;
+    background-image: url("95579b27d455b77ef335b01316541dba.jpg");
+
+    }
+    form{
+      font-family: georgia;
+      background-color: #46e615;
+      width: 300px;
+      margin: 180px auto;
+      padding: 30px;
+      text-align: right;
+      color: rgb(54, 49, 49);
+      box-shadow: 5px 5px rgb(54, 50, 50);
+    }
+    input{
+      margin: 10px;
+    }
+    input.login{
+      background-color:#00c9bf ;
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bold;
+      padding: 5px 10px;
+      margin: 30px 10px auto 0px;
+    }
+
+    h3{
+      text-align:center;
+      margin: 35px auto;
+      margin-top: 15px;
+      font-weight: bold;
+      color: black;
+      font-family: cambria;
+    }
+  </style>
+</head>
+<body>
+  <form action="Berhasil.html" method="get" id="Form" onsubmit=" return login()">
+    <h3>LOGIN TOKOMADU SS</h3>
+    Username  
+    <input type="text" name="username" placeholder="Username">
+    Password  
+    <input type="password" name="password" placeholder="Password">
+    <input class="login" type="submit" name="login" value="Login">
+  </form>
+</body>
+<script>
+  function login(){
+    let username = document.forms["Form"]["username"].value;
+    let password = document.forms["Form"]["password"].value;
+    if( username == "admin" && password >= 12 ){
+      return true;
+    }
+    else if(username =="" || password ==""){
+      alert("Masukkan username dan password anda");
+      return false;
+    }
+    else{
+      alert("Username atau password yang anda masukan SALAH");
+      return false;
+    }
+  }
+</script>
+</html>

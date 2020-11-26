@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mari Menghitung</title>
+	<style>
+		body {
+            background-color: #03316e;
+			color: #f8f8f8;
+			min-height: 90vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+            align-items: center;
+            font-family: 'Arial Narrow',;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			background-color: #87918f;
+			padding: 1em;
+			max-width: 500px;
+			width: 100%;
+			border-radius: 1em;
+		}
+
+		input, select, button {
+			margin: 1em;
+			padding: 1em;
+			border-radius: 1em;
+			outline: none;
+			border: 1px solid #bdc3c7;
+		}
+
+		.result {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h2 class="body">MENGHITUNG KURS UANG</h2>
+	<div class="container">
+        <p class="result">Jumlah Uang</p>
+        <input type="text" id="nilai" value="0" onchange="hitung()" />
+        <p class="result">Pilih Mata Uang</p>
+		<select class="kurs" id="values" onchange="hitung()">
+			<option value="usd">USD - 14.161</option>
+			<option value="sgd">SGD - 10.554</option>
+			<option value="myr">MYR - 3.549</option>
+			<option value="yen">YEN - 135</option>
+			<option value="eur">EUR - 16.864</option>
+			<option value="sr"> SR  - 3.785</option>
+        </select>
+        <p class="result">Hasil </p>
+		<input type="text" class="result" id="rupiah" value="0" />
+	</div>
+
+	<script>
+		 function hitung() {
+        let n1 = Number(document.getElementById("nilai").value);
+        let val = document.getElementById("values").value;
+
+        if (val === "usd") {
+          document.getElementById("rupiah").value = n1 * 14161;
+        } else if (val === "sgd") {
+          document.getElementById("rupiah").value = n1 * 10554;
+        } else if (val === "myr") {
+          document.getElementById("rupiah").value = n1 * 3459;
+        } else if (val === "yen") {
+          document.getElementById("rupiah").value = n1 * 135;
+        } else if (val === "eur") {
+          document.getElementById("rupiah").value = n1 * 16864;
+        } else if (val === "sr") {
+          document.getElementById("rupiah").value = n1 * 3785;
+        }
+      }
+	</script>
+</body>
+</html>

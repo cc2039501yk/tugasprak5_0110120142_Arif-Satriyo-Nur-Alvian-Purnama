@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    <style>
+        body {
+            background-color: #596264;
+            color: #000000;
+        }
+        .result-chat {
+            width: 500px;
+            height: 200px;
+            border: 3px solid rgb(202, 6, 6);
+            margin-bottom: 1rem;
+            overflow: auto;
+            background-color: rgb(0, 81, 255);
+
+        }
+    </style>
+    </head>
+    <body>
+        <main>
+            <div class="result-chat">
+            </div>
+            <div>
+                <input type="text" class="input-chat">
+                <button class="btn-chat">Send</button>
+            </div>
+        </main>
+        <script>
+            let resultChat = document.querySelector(".result-chat");
+            const inputChat = document.querySelector(".input-chat");
+            const btnChat = document.querySelector(".btn-chat");
+
+            btnChat.addEventListener("click", function() {
+                resultChat.innerHTML = resultChat.innerHTML + "<br>" + "Seseorang:" + inputChat.value;
+                inputChat.value = "";
+            })
+        </script>
+    </body>
+</html>
